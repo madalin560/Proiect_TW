@@ -64,6 +64,8 @@ document.getElementById("inputPasswordRegister").addEventListener("keydown", (ev
     }
 });
 
+// Handle the registration with validation and notifications
+
 handleRegisterFormSubmit = (event) => {
     event.preventDefault();
     const errors = [];

@@ -111,6 +111,8 @@ bookFlight = (flight) => {
     });
 }
 
+// Show all bookings based on user
+
 showUserBookmarks = (user) => {
     fetch(`https://my-json-server.typicode.com/madalin560/demo/bookings?user=${user}`).then(response => response.json().then(data => {
             closeOtherModals();
