@@ -1,0 +1,51 @@
+/* Main page */
+
+#home-jumbotron {
+    background-image: url("../assets/img/main_bg_1.jpg");
+    background-position: 50% -62.6px;
+    min-height: 600px;
+    width: 100vw;
+    height: calc(100vh - 73px);
+    color: white;
+    position: relative;
+}
+
+#home-jumbotron::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+#home-jumbotron h1{
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.5;
+    text-align: center;
+}
+
+#home-jumbotron h4{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    text-align: center;
+    max-width: 66%;
+}
+
+.datepick-wrapper {
+    display: flex;
+}
+
+.datepick-wrapper .start {
+    width: 50%;
+}
+
+.datepick-wrapper .end {
+    width: 50%;
+}

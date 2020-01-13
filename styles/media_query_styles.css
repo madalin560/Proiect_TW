@@ -1,0 +1,107 @@
+@media screen and (max-width: 600px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .flex-row {
+        flex-direction: column !important;
+    }
+
+    .flex-container {
+        width: auto;
+    }
+
+    #nav-bar {
+        padding: 1rem 0;
+    }
+
+    #home-jumbotron h1 {
+        font-size: 3rem;
+    }
+
+    #paralax-jumbo-section h1 {
+        font-size: 3rem;
+    }
+
+    .block-unit-with-icon {
+        margin-bottom: 2rem;
+    }
+
+    #testimonials .img-fluid {
+        display: none;
+    }
+
+    #testimonials-text-content-wrapper {
+        width: auto;
+        margin-left: 0;
+    }
+
+    .wrapper {
+        margin: 0;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    #ad h2 {
+        font-size: 1.7rem;
+    }
+
+    .footer-column ul {
+        width: auto;
+        display: block;
+    }
+
+    #site-footer .flex-container .footer-column {
+        padding: 20px;
+    }
+
+    #about .img-fluid {
+        display: none;
+    }
+
+    .about-text-wrapper {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .contact-form-wrapper {
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .overlap-section {
+        margin-top: 0;
+    }
+
+    .block-unit-with-image {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .flex-container {
+        width: auto;
+    }
+
+    #site-footer .flex-container .footer-column {
+        width: 90%;
+    }
+
+    #home-jumbotron h1 {
+        font-size: 3.5rem;
+    }
+
+    #paralax-jumbo-section h1 {
+        font-size: 3.5rem;
+    }
+
+    .boot-footer-column {
+        margin-bottom: 0;
+    }
+}

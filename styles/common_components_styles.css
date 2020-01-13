@@ -1,0 +1,102 @@
+/* General components section */
+
+.block-unit-with-image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    margin: 0 16px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.block-unit-with-image img {
+    transition: .3s all ease-in-out;
+    object-fit: cover;
+    transform: scale(1);
+}
+
+.block-unit-with-image .block-unit-text {
+    z-index: 2;
+    position: absolute;
+    bottom: 10px;
+    color: #fff;
+    display: block;
+    width: 100%;
+    transition: .3s all ease-in-out;
+}
+
+.block-unit-with-image .block-unit-text .block-unit-heading {
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.block-unit-with-image .block-unit-text .price{
+    color: #ef6c57;
+    margin-bottom: 0.5rem;
+}
+
+.block-unit-with-image:hover img {
+    transform: scale(1.05);
+}
+
+.block-unit-with-image:hover .block-unit-text {
+    bottom: 30px;
+}
+
+.block-unit-with-image::after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%,rgba(0, 0, 0, 0.8) 100%);
+}
+
+.block-unit-with-icon {
+    display: flex;
+    margin: 0 20px;
+}
+
+.block-unit-with-icon .block-unit-icon {
+    margin-right: 1.5rem;
+}
+
+.block-unit-with-icon .block-unit-icon i {
+    line-height: 1;
+    width: 40px;
+    height: 40px;
+    font-size: 3rem;
+    color: #ef6c57;
+}
+
+.block-unit-with-icon:nth-child(2) .block-unit-icon {
+    margin-right: 1rem;
+}
+
+.block-unit-with-icon h3 {
+    font-size: 20px;
+}
+
+/* Testimonials */
+
+#testimonials .img-fluid {
+    width: 50%;
+}
+
+#testimonials-text-content-wrapper {
+    background: white;
+    width: 50%;
+    padding: 3rem;
+    margin-left: -100px;
+}
+
+#testimonials-text-content-wrapper p:first-child {
+    font-size: 1.25rem;
+    font-weight: 300;
+}

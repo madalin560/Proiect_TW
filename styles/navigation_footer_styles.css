@@ -1,0 +1,132 @@
+/* Navigation */
+
+nav {
+    width: 55%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 0;
+}
+
+.dropdown {
+    background:#fff;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.21);
+    padding: 0.5em 1em;
+    border-top: 1px solid #ef6c57;
+    min-width: 100px;
+}
+
+nav li {
+    display: inline-block;
+    position: relative;
+    transition-duration: 0.5s;
+}
+
+nav li:hover {
+    cursor: pointer;
+}
+
+nav ul li ul {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease;
+    left: 0;
+    display: none;
+}
+
+nav ul li:hover > ul,
+nav ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    z-index: 1000;
+    position: absolute;
+}
+
+nav ul li ul li {
+    clear: both;
+    width: 100%;
+    font-size: 14px;
+}
+
+.navigation-icons i {
+    padding: 0 6px;
+    cursor: pointer;
+    color: #4d4d4d
+}
+
+#navigation-user {
+    display: flex;
+    align-items: center;
+}
+
+#navigation-user .btn{
+    margin: 16px;
+}
+
+/* Footer */
+
+#site-footer {
+    padding: 8em 0;
+    background: #333
+}
+
+#site-footer .flex-container .footer-column {
+    flex: 1 1 33%;
+    color: #737373;
+    padding: 36px;
+    margin-bottom: 3rem;
+    align-self: flex-start;
+}
+
+.boot-footer-column {
+    color: #737373;
+    margin-bottom: 3rem;
+    padding: 36px;
+}
+
+.boot-footer-column ul{
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-column ul {
+    padding-left: 0;
+    list-style: none;
+    display: inline-block;
+    width: 48%;
+}
+
+.newsletter-button-group {
+    display: flex;
+}
+
+.newsletter-button-group input {
+    border-color:#6c757d;
+    background-color: transparent;
+    padding: 0.35rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border: 1px solid#ced4da;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color:#fff;
+}
+
+.newsletter-button-group .main-button {
+    padding: 0.35rem 0.75rem;
+}
+
+.footer-heading {
+    font-size: 20px;
+    color:#fff;
+    margin-bottom: 1.5rem;
+}
+
+.copyright {
+    color:#737373;
+    text-align: center;
+}

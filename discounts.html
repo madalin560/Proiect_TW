@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Proiect - Travel agency</title>
+        <link rel="icon" href="assets/img/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="styles/pricing_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/general_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/common_components_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/navigation_footer_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/media_query_styles.css">
+        <script src="https://use.fontawesome.com/83290b8efc.js"></script>
+    </head>
+    <body>
+
+        <!-- Navigation -->
+        <div id="nav-bar" class="flex-container flex-row space-between">
+            <h1><a href="index.html">Travelers</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations &#8744;</a>
+                        <ul class="dropdown">
+                            <li><a href="#">London</a></li>
+                            <li><a href="#">Dubai</a></li>
+                            <li><a href="#">Japan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="discounts.html">Discounts</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="navigation-icons">
+                <a href="https://www.facebook.com/alexandru.madalin.988"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/?lang=en"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/alexandru__madalin"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <!-- Login modal -->
+        <div id="registerModal" class="modal">
+            <!-- Modal content -->
+            <form>
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+                    <small id="emailError" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+
+        <!-- Register modal -->
+        <div id="registerModal" class="modal">
+            <!-- Modal content -->
+            <form>
+                <div class="form-group">
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Your name and surname" />
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+                    <small id="emailError" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="inputCity">City</label>
+                    <select id="inputCity" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>Romania</option>
+                        <option>Anglia</option>
+                        <option>Spania</option>
+                        <option>Italia</option>
+                    </select>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioGenderMale" id="radioGenderMale" value="male">
+                    <label class="form-check-label" for="radioGenderMale">Male</label>
+                    <input class="form-check-input" type="radio" name="radioGenderFemale" id="radioGenderFemale" value="female">
+                    <label class="form-check-label" for="radioGenderFemale">Femalee</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="termsConditions" value="acceptedTerms">
+                    <label class="form-check-label" for="termsConditions">Accept the terms and conditions</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+
+        <!-- Paralax Section -->
+        <div id="paralax-jumbo-section">
+            <div class="flex-container flex-column">
+                <h1>Our Prices</h1>
+                <div><a href="index.html">Home</a> <span>•</span> <span>Discounts</span></div>
+            </div>
+        </div>
+
+        <!-- Pricing table-->
+        <div class="site-section">
+            <div class="section-header">
+                <h2 class="section-title text-center">Discover our packages</h2>
+                <p class="section-subtitle text-center">We Offer The Following Packages</p>
+            </div>
+            <div class="wrapper">
+                <div class="pricing-table gprice-single">
+                    <div class="head">
+                        <h4 class="title">Basic</h4>
+                    </div>
+                    <div class="content">
+                        <div class="price">
+                            <h1>$19</h1>
+                        </div>
+                        <ul>
+                            <li>Free meal</li>
+                            <li>Cheap plane tickets</li>
+                            <li>Hired guide</li>
+                            <li>Discounts on rented cars</li>
+                            <li> <del>Museum entrance</del> </li>
+                            <li> <del>Public transportaion</del></li>
+                        </ul>
+                        <div class="sign-up">
+                            <a href="#" class="btn bordered radius">Signup Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-table gprice-single">
+                    <div class="head">
+                        <h4 class="title">Standard</h4>
+                    </div>
+                    <div class="content">
+                        <div class="price">
+                            <h1>$29</h1>
+                        </div>
+                        <ul>
+                            <li>Free meal</li>
+                            <li>Cheap plane tickets</li>
+                            <li>Hired guide</li>
+                            <li>Discounts on rented cars</li>
+                            <li>Museum entrance</li>
+                            <li> <del>Public transportaion</del></li>
+                        </ul>
+                        <div class="sign-up">
+                            <a href="#" class="btn bordered radius">Signup Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-table gprice-single">
+                    <div class="head">
+                        <h4 class="title">Premium</h4>
+                    </div>
+                    <div class="content">
+                        <div class="price">
+                            <h1>$39</h1>
+                        </div>
+                        <ul>
+                            <li>Free meal</li>
+                            <li>Cheap plane tickets</li>
+                            <li>Hired guide</li>
+                            <li>Discounts on rented cars</li>
+                            <li>Museum entrance</li>
+                            <li>Public transportaion</li>
+                        </ul>
+                        <div class="sign-up">
+                            <a href="#" class="btn bordered radius">Signup Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Services -->
+        <div class="site-section light-background">
+            <div class="section-header">
+                <h2 class="section-title text-center">Our Services</h2>
+                <p class="section-subtitle text-center">We Offer The Following Services</p>
+            </div>
+            <div class="flex-container flex-row">
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-ship" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Cruises</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Air Ticketing</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-map" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Tour Packages</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="flex-container flex-row">
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-bed" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Hotel Accomodations</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-anchor" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Sea Exploration</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-medkit" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Travel Insurance</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="#">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ad -->
+        <div class="site-section" id="ad">
+            <div class="flex-container flex-column">
+                <h2>Want To Travel With Us?</h2>
+                <button class="main-button filled">Book now!</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="site-footer">
+            <div class="flex-container flex-row">
+                <div class="footer-column">
+                    <h3 class="footer-heading">About Travelers</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Navigations</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="discounts.html">Prices</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="discounts.html">Prices</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Subscribe Newsletter</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
+                    <form action="#" method="post">
+                        <div class="newsletter-button-group">
+                            <input type="text" placeholder="Enter Email">
+                            <div class="input-group-append">
+                                <button class="main-button" type="button">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright ©Alexandru Madalin</p>
+            </div>
+        </footer>
+
+    </body>
+</html>

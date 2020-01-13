@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Proiect - Travel agency</title>
+        <link rel="icon" href="assets/img/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="styles/home_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/general_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/common_components_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/navigation_footer_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/media_query_styles.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/js-datepicker/dist/datepicker.min.css">
+        <script src="https://use.fontawesome.com/83290b8efc.js"></script>
+    </head>
+    <body>
+
+        <!-- Navigation -->
+        <div id="nav-bar" class="flex-container flex-row space-between">
+            <h1><a href="index.html">Travelers</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations &#8744;</a>
+                        <ul class="dropdown">
+                            <li><a href="#">London</a></li>
+                            <li><a href="#">Dubai</a></li>
+                            <li><a href="#">Japan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="discounts.html">Discounts</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div id="navigation-user">
+            </div>
+        </div>
+
+        <!-- Flights modal -->
+        <div id="flightsModal" class="modal hiddenModal">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="inputCity">Origin</label>
+                    <select name="origin" id="inputCity" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>Romania</option>
+                        <option>Anglia</option>
+                        <option>Spania</option>
+                        <option>Italia</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputCity">Destination</label>
+                    <select name="destination" id="inputCity" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>Romania</option>
+                        <option>Anglia</option>
+                        <option>Spania</option>
+                        <option>Italia</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="datePick">Date</label>
+                    <div class="datepick-wrapper">
+                        <input class="form-control start" id="datePick" placeholder="Enter start time">
+                        <input class="form-control end" id="datePick" placeholder="Enter end time">
+                    </div>
+                </div>
+                <button onclick="findFlightOffers(event)" type="submit" class="btn btn-primary">Find offers</button>
+            </form>
+        </div>
+
+        <!-- Booking modal -->
+        <div id="bookingModal" class="modal hiddenModal">
+            <div id="flightsTable">
+            </div>
+        </div>
+
+        <!-- Login modal -->
+        <div id="loginModal" class="modal hiddenModal">
+            <!-- Modal content -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email address</label>
+                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                </div>
+                <label class="highlight-text" id="registerButton">Don't have an account? Register Here</label>
+                <button onclick="handleLoginFormSubmit(event)" type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+
+        <!-- Register modal -->
+        <div id="registerModal" class="modal hiddenModal">
+            <!-- Modal content -->
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="inputName">Name</label>
+                    <input name="name" type="text" class="form-control" id="inputName" placeholder="Your name and surname" />
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="inputPasswordRegister">Password</label>
+                    <input name="password" type="password" class="form-control registerPasswordField" id="inputPasswordRegister" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="inputCity">City</label>
+                    <select name="city" id="inputCity" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>Romania</option>
+                        <option>Anglia</option>
+                        <option>Spania</option>
+                        <option>Italia</option>
+                    </select>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioGender" id="radioGenderMale" value="male">
+                    <label class="form-check-label" for="radioGenderMale">Male</label>
+                    <input class="form-check-input" type="radio" name="radioGender" id="radioGenderFemale" value="female">
+                    <label class="form-check-label" for="radioGenderFemale">Female</label>
+                </div>
+                <div class="form-check">
+                    <input name="terms" class="form-check-input" type="checkbox" id="termsConditions" value="acceptedTerms">
+                    <label class="form-check-label" for="termsConditions">Accept the terms and conditions</label>
+                </div>
+                <button onclick="handleRegisterFormSubmit(event)" type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+
+        <!-- Jumbotron -->
+        <div id="home-jumbotron">
+            <div class="flex-container flex-column">
+                <h1>Never stop exploring</h1>
+                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy</h4>
+                <button onclick="openFlightsModal()" class="main-button filled book-button">Book now!</button>
+            </div>
+        </div>
+
+        <!-- General Info -->
+        <div class="site-section overlap-section">
+            <div class="flex-container flex-row">
+                <a href="discounts.html" class="block-unit-with-image text-center">
+                    <img src="assets/img/img_1.jpg" alt="Image" class="img-fluid">
+                    <div class="block-unit-text">
+                        <h3 class="block-unit-heading">Write Down Your Experience</h3>
+                    </div>
+                </a>
+                <a href="discounts.html" class="block-unit-with-image text-center">
+                    <img src="assets/img/img_2.jpg" alt="Image" class="img-fluid">
+                    <div class="block-unit-text">
+                        <h3 class="block-unit-heading">Explore Asian Mountains</h3>
+                    </div>
+                </a>
+                <a href="discounts.html" class="block-unit-with-image text-center">
+                    <img src="assets/img/img_3.jpg" alt="Image" class="img-fluid">
+                    <div class="block-unit-text">
+                        <h3 class="block-unit-heading">Safe trips with Airasia</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="site-section">
+            <div class="flex-container flex-row">
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-ship" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Cruises</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="discounts.html">Learn More</a></p>
+                    </div>
+                </div>
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Air Ticketing</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="discounts.html">Learn More</a></p>
+                    </div>
+                </div>
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-map" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Tour Packages</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="discounts.html">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="site-section light-background" id="testimonials">
+            <div class="section-header">
+                <h2 class="section-title text-center">Testimonials</h2>
+            </div>
+            <div class="flex-container flex-row">
+                <img src="assets/img/img_1.jpg" alt="Image" class="img-fluid">
+                <div id="testimonials-text-content-wrapper">
+                    <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro”</p>
+                    <p>— <em>Clair Augustin</em>, <a>Traveler</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Destinations -->
+        <div class="site-section">
+            <div class="section-header">
+                <h2 class="section-title text-center">Our destinations</h2>
+                <p class="section-subtitle text-center">Choose Your Next Destination</p>
+            </div>
+            <div class="flex-container flex-row">
+                <a href="discounts.html" class="block-unit-with-image text-center">
+                    <img src="assets/img/01-greece.jpg" alt="Image" class="img-fluid">
+                    <div class="block-unit-text">
+                        <strong class="price">$620</strong>
+                        <h3 class="block-unit-heading">Santorini, Greece</h3>
+                    </div>
+                </a>
+                <a href="discounts.html" class="block-unit-with-image text-center">
+                    <img src="assets/img/02-rome.jpg" alt="Image" class="img-fluid">
+                    <div class="block-unit-text">
+                        <strong class="price">$420</strong>
+                        <h3 class="block-unit-heading">Rome, Italy</h3>
+                    </div>
+                </a>
+                <a href="discounts.html" class="block-unit-with-image text-center">
+                    <img src="assets/img/03-japan.jpg" alt="Image" class="img-fluid">
+                    <div class="block-unit-text">
+                        <strong class="price">$390</strong>
+                        <h3 class="block-unit-heading">Mount Fuji, Japan</h3>
+                    </div>
+                </a>
+            </div>
+            <br>
+            <div class="flex-container flex-row">
+                <a href="discounts.html" class="block-unit-with-image text-center">
+                    <img src="assets/img/04-dubai.jpg" alt="Image" class="img-fluid">
+                    <div class="block-unit-text">
+                        <strong class="price">$320</strong>
+                        <h3 class="block-unit-heading">Camels, Dubai</h3>
+                    </div>
+                </a>
+                <a href="discounts.html" class="block-unit-with-image text-center">
+                    <img src="assets/img/05-london.jpg" alt="Image" class="img-fluid">
+                    <div class="block-unit-text">
+                        <strong class="price">$290</strong>
+                        <h3 class="block-unit-heading">Elizabeth Tower, London</h3>
+                    </div>
+                </a>
+                <a href="discounts.html" class="block-unit-with-image text-center">
+                    <img src="assets/img/06-australia.jpg" alt="Image" class="img-fluid">
+                    <div class="block-unit-text">
+                        <strong class="price">$390</strong>
+                        <h3 class="block-unit-heading">Opera House, Australia</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Paralax Section -->
+        <div class="paralax-site-section">
+            <div class="flex-container flex-column">
+                    <a href="https://www.youtube.com/watch?v=sRyslbdtT90" class="play-button">
+                        <i class="fa fa-play" aria-hidden="true"></i>
+                    </a>
+                    <h2>Experience Our Outstanding Services</h2>
+            </div>
+        </div>
+
+        <!-- Our Services -->
+        <div class="site-section light-background">
+            <div class="section-header">
+                <h2 class="section-title text-center">Our Services</h2>
+                <p class="section-subtitle text-center">We Offer The Following Services</p>
+            </div>
+            <div class="flex-container flex-row">
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-ship" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Cruises</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="discounts.html">Learn More</a></p>
+                    </div>
+                </div>
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Air Ticketing</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="discounts.html">Learn More</a></p>
+                    </div>
+                </div>
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-map" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Tour Packages</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="discounts.html">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="flex-container flex-row">
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-bed" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Hotel Accomodations</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="discounts.html">Learn More</a></p>
+                    </div>
+                </div>
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-anchor" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Sea Exploration</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="discounts.html">Learn More</a></p>
+                    </div>
+                </div>
+                <div class="block-unit-with-icon">
+                    <div class="block-unit-icon">
+                        <i class="fa fa-medkit" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Travel Insurance</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <p><a href="discounts.html">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ad -->
+        <div class="site-section light-background" id="ad">
+            <div class="flex-container flex-column">
+                <h2>Want To Travel With Us?</h2>
+                <button onclick="openFlightsModal()" class="main-button filled book-button">Book now!</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="site-footer">
+            <div class="flex-container flex-row">
+                <div class="footer-column">
+                    <h3 class="footer-heading">About Travelers</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Navigations</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="discounts.html">Prices</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="discounts.html">Prices</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Subscribe Newsletter</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
+                    <form action="#" method="post">
+                        <div class="newsletter-button-group">
+                            <input type="text" placeholder="Enter Email">
+                            <div class="input-group-append">
+                                <button class="main-button" type="button">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright ©Alexandru Madalin</p>
+            </div>
+        </footer>
+
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="node_modules/js-datepicker/dist/datepicker.min.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/user.js"></script>
+    <script src="scripts/booking.js"></script>
+</html>

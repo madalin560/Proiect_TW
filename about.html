@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Proiect - Travel agency</title>
+        <link rel="icon" href="assets/img/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="styles/about_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/general_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/common_components_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/navigation_footer_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/media_query_styles.css">
+        <script src="https://use.fontawesome.com/83290b8efc.js"></script>
+    </head>
+    <body>
+
+        <!-- Navigation -->
+        <div id="nav-bar" class="flex-container flex-row space-between">
+            <h1><a href="index.html">Travelers</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations &#8744;</a>
+                        <ul class="dropdown">
+                            <li><a href="#">London</a></li>
+                            <li><a href="#">Dubai</a></li>
+                            <li><a href="#">Japan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="discounts.html">Discounts</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="navigation-icons">
+                <a href="https://www.facebook.com/alexandru.madalin.988"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/?lang=en"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/alexandru__madalin"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <!-- Paralax Section -->
+        <div id="paralax-jumbo-section">
+            <div class="flex-container flex-column">
+                <h1>About Travelers</h1>
+                <div><a href="index.html">Home</a> <span>•</span> <span>About</span></div>
+            </div>
+        </div>
+
+        <!-- About the company -->
+        <div class="site-section" id="about">
+            <div class="flex-container flex-row">
+                <img src="assets/img/img_1.jpg" alt="Image" class="img-fluid">
+                <div class="about-text-wrapper">
+                    <h2>About Company</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae cumque eius modi expedita accusamus alias error totam ab magnam a mollitia magni, distinctio temporibus optio illo sapiente, odio unde natus.</p>
+                    <ol class="checkmark-list">
+                        <li class="d-flex align-items-center"><i class="fa fa-check" aria-hidden="true"></i><span>Vitae cumque eius modi expedita</span></li>
+                        <li class="d-flex align-items-center"><i class="fa fa-check" aria-hidden="true"></i><span>Totam at maxime Accusantium</span></li>
+                        <li class="d-flex align-items-center"><i class="fa fa-check" aria-hidden="true"></i><span>Distinctio temporibus</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-section">
+            <div class="section-header">
+                <h2 class="section-title text-center">Our team</h2>
+            </div>
+            <div class="flex-container flex-column">
+                <div class="team flex-row">
+                    <div class="team-member">
+                        <img src="assets/img/person_1.jpg" alt="Image" class="member-img">
+                        <h2>Jean McMiller</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="assets/img/person_2.jpg" alt="Image" class="member-img">
+                        <h2>Jean McMiller</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="assets/img/person_4.jpg" alt="Image" class="member-img">
+                        <h2>Jean McMiller</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
+                    </div>
+                </div>
+                <div class="team-message-wrapper">
+                    <h2 class="text-center">A message from our team</h2>
+                    <audio controls>
+                        <source src="assets/audio/message.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="site-section light-background" id="testimonials">
+            <div class="section-header">
+                <h2 class="section-title text-center">What people say</h2>
+            </div>
+            <div class="flex-container flex-row">
+                <img src="assets/img/img_1.jpg" alt="Image" class="img-fluid">
+                <div id="testimonials-text-content-wrapper">
+                    <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro”</p>
+                    <p class="">— <em>Clair Augustin</em>, <a href="#">Traveler</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ad -->
+        <div class="site-section" id="ad">
+            <div class="flex-container flex-column">
+                <h2>Want To Travel With Us?</h2>
+                <button class="main-button filled">Book now!</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="site-footer">
+            <div class="flex-container flex-row">
+                <div class="footer-column">
+                    <h3 class="footer-heading">About Travelers</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Navigations</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="discounts.html">Prices</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="discounts.html">Prices</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Subscribe Newsletter</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
+                    <form action="#" method="post">
+                        <div class="newsletter-button-group">
+                            <input type="text" placeholder="Enter Email">
+                            <div class="input-group-append">
+                                <button class="main-button" type="button">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright ©Alexandru Madalin</p>
+            </div>
+        </footer>
+
+    </body>
+</html>
